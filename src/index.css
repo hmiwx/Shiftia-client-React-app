@@ -2,3 +2,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6, #f97316);
+    background-attachment: fixed;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    color: #1f2937;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
