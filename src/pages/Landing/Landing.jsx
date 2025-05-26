@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '../../components/Topbar/Topbar'
 import Header from '../../components/Header/Header'
 import Video from '../../components/Video/Video'
+import Benefits from '../../components/Benefits/Benefits'
 
 export default function Landing() {
   return (
@@ -10,6 +11,7 @@ export default function Landing() {
     <main class="max-w-6xl mx-auto mt-8 p-4">
       <Header />
       <Video />
+      <Benefits />
     </main>
     </>
   )
