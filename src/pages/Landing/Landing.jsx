@@ -3,6 +3,7 @@ import Topbar from '../../components/Topbar/Topbar'
 import Header from '../../components/Header/Header'
 import Video from '../../components/Video/Video'
 import Benefits from '../../components/Benefits/Benefits'
+import Reglink from '../../components/Reglink/Reglink'
 
 export default function Landing() {
   return (
@@ -12,6 +13,7 @@ export default function Landing() {
       <Header />
       <Video />
       <Benefits />
+      <Reglink />
     </main>
     </>
   )
