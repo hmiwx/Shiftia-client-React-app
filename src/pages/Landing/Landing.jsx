@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import Video from '../../components/Video/Video'
 import Benefits from '../../components/Benefits/Benefits'
 import Reglink from '../../components/Reglink/Reglink'
+import Footer from '../../components/Footer/Footer'
 
 export default function Landing() {
   return (
@@ -15,6 +16,7 @@ export default function Landing() {
       <Benefits />
       <Reglink />
     </main>
+    <Footer />
     </>
   )
 }
