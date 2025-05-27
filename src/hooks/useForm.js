@@ -46,3 +46,5 @@ export const useForm = (initInputs, initFormIsValid) => {
 
   return [formState, onInputHandler];
 };
+
+export default useForm;
