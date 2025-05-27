@@ -6,7 +6,7 @@ export default function Benefits() {
             <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/2">
                     <h3 className="text-3xl font-bold text-blue-900 mb-4">مزایای استفاده از شیفتیا</h3>
-                    <p className="text-gray-700 mb-6">در زمان تنگ و بدون نیاز به حضور فیزیکی، امور روزمره خود را به ما بسپارید.</p>
+                    <p className="text-gray-700 mb-6">در زمان تنگ و بدون نیاز به حضور فیزیکی، امور روزمره را به ما بسپارید.</p>
                     
                     <div className="space-y-4">
                         <div className="flex items-start gap-3">
