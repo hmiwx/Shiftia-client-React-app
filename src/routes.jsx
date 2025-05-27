@@ -1,11 +1,11 @@
 import Index from "./pages/Landing/Landing";
-//import Customer_Register from "./pages/Customer-Register/Customer_Register.jsx";
+import Customer_Register from "./pages/Customer-Register/Customer-Register.jsx";
 //import Provider_Register from "./pages/Provider-Register/Provider_Register.jsx";
 //import Support_Ticket from "./pages/Support-Ticket/Support_Ticket.jsx";
 
 const routes = [
     {path: '/', element: <Index />},
-    //{path: '/customers-register', element: <Customer_Register />},
+    {path: '/customer-register', element: <Customer_Register />},
     //{path: '/providers-register', element: <Provider_Register />},
     //{path: '/support-ticket', element: <Support_Ticket />}
 
