@@ -14,8 +14,8 @@ export default function Footer() {
                         </div>
                         <h4 className="text-xl font-bold">شیفتیا</h4>
                     </div>
-                    <p className="text-gray-400">پلتفرم ارائه خدمات محلی برای کارکنان شیفتی</p>
-                    <div className="flex gap-4 mt-4">
+                    <p className="text-gray-400 mt-2">پلتفرم ارائه خدمات محلی برای کارکنان شیفتی</p>
+                    <div className="flex gap-8 mt-4">
                         <Link to="#" className="text-gray-400 hover:text-white">
                             <i className="fab fa-instagram"></i>
                         </Link>
@@ -40,7 +40,7 @@ export default function Footer() {
                 
                 <div>
                     <h4 className="text-lg font-bold mb-4">تماس با ما</h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-4">
                         <li className="flex items-start gap-2">
                             <i className="fas fa-map-marker-alt text-gray-400 mt-1"></i>
                             <span className="text-gray-400">شهرستان جم</span>
@@ -51,7 +51,7 @@ export default function Footer() {
                         </li>
                         <li className="flex items-start gap-2">
                             <i className="fas fa-envelope text-gray-400 mt-1"></i>
-                            <span classname="text-gray-400">info@shiftiha.ir</span>
+                            <span className="text-gray-400">info@shiftiha.ir</span>
                         </li>
                     </ul>
                 </div>

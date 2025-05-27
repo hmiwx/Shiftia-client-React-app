@@ -6,7 +6,7 @@ export default function Video() {
             <h3 className="text-3xl font-bold text-blue-900 mb-6 text-center">معرفی شیفتیا</h3>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl">
                 <div className="w-full h-0 pb-[56.25%] relative bg-gray-100 rounded-xl">
-                    <iframe class="absolute inset-0 w-full h-full rounded-xl" 
+                    <iframe className="absolute inset-0 w-full h-full rounded-xl" 
                             src="https://www.youtube.com/" 
                             title="معرفی شیفتیا" 
                             frameborder="0" 
@@ -22,8 +22,8 @@ export default function Video() {
                     </div> */}
                 </div>
             </div>
-            <div class="mt-6 text-center">
-                <p class="text-gray-700">در این ویدیو با امکانات و نحوه استفاده از پلتفرم شیفتی‌ها آشنا شوید.</p>
+            <div className="mt-6 text-center">
+                <p className="text-gray-700">در این ویدیو با امکانات و نحوه استفاده از پلتفرم شیفتیا آشنا شوید.</p>
             </div>
         </section>
   )

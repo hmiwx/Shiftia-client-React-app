@@ -10,11 +10,10 @@ export default function Topbar() {
                 <div className="h-12 w-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
                     <img src={Logo} alt="Logo" className="w-[147%] h-[147%] object-cover"/>
                 </div>
-                <h1 className="text-2xl font-bold">شیفتی‌ها</h1>
+                <h1 className="text-2xl font-bold">شیفتیا</h1>
             </div>
             <div className="flex gap-6 items-center">
                 <Link to="/" className="nav-link hover:text-orange-300 transition-colors">ثبت‌نام</Link>
-                <Link to="/" className="nav-link hover:text-orange-300 transition-colors">ورود</Link>
                 <Link to="/" className="nav-link hover:text-orange-300 transition-colors">پشتیبانی</Link>
             </div>
         </div>
