@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Logo from '../../assets/images/logo.svg'
+import Brand from '../Brand/Brand'
 
 export default function Footer() {
   return (
@@ -8,12 +8,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 bg-white rounded-full overflow-hidden flex items-center justify-center">
-                            <img src={Logo} alt="Logo" className="w-[147%] h-[147%] object-cover"/>
-                        </div>
-                        <h4 className="text-xl font-bold">شیفتیا</h4>
-                    </div>
+                <Brand w={10} h={10} fontsize="xl" />
                     <p className="text-gray-400 mt-2">پلتفرم ارائه خدمات محلی برای کارکنان شیفتی</p>
                     <div className="flex gap-8 mt-4">
                         <Link to="#" className="text-gray-400 hover:text-white">
