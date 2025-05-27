@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect'
 export default function Header() {
   return (
     <section className="text-center mb-16 fade-in">
-            <h2 className="text-5xl font-bold text-white mb-4">پلتفرم رزرو خدمات محلی برای کارکنان شیفتی</h2>
+            <h2 className="text-5xl font-bold text-white mb-4">پلتفرم رزرو خدمات محلی برای کارکنان شیفتی در شهر جم</h2>
             <p className="text-gray-100 mt-4 text-2xl max-w-2xl mx-auto">
             <Typewriter onInit={(tw) => tw.
                     typeString("تعمیرات سریع، رزرو کارواش و آرایشگاه، نظافت محل و...")
