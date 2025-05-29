@@ -1,4 +1,6 @@
 import React from 'react'
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 import Topbar from '../../components/Topbar/Topbar'
 import Footer from '../../components/Footer/Footer'
 import useForm from '../../hooks/useForm'
@@ -13,6 +15,7 @@ import {
 
 
 export default function Customer_Register() {
+    const navigate = useNavigate();
 
     const [formState, onInputHandler] = useForm(
         {
@@ -50,11 +53,18 @@ export default function Customer_Register() {
                 const errorText = await res.text();
                 throw new Error(errorText);
             }
-            const result = await res.json();
-            console.Console.log(result)
+            swal({
+                title: "اطلاعات شما با موفقیت ثبت شد.\nاز همراهی شما سپاسگذاریم",
+                icon: "success",
+                buttons: "بازگشت",
+              }).then(()=> navigate('/'))
 
         } catch (err) {
-            console.error("Login error:", err);
+            swal({
+                title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
+                icon: "error",
+                buttons: "ارسال مجدد"
+            }).then(()=> registerClient())
         }
     }
 
