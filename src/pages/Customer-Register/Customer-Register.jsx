@@ -76,6 +76,7 @@ export default function Customer_Register() {
                                 className="w-full p-3 pl-10"
                                 element="input"
                                 id="name"
+                                iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
                                     requiredValidator(),
@@ -83,7 +84,6 @@ export default function Customer_Register() {
                                     maxValidator(20),
                                 ]}
                             />
-                            <i class="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
                         </div>
                     </div>
                     <div>
@@ -95,13 +95,13 @@ export default function Customer_Register() {
                                 className="w-full p-3 pl-10"
                                 element="input"
                                 id="phone"
+                                iconClasses="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
                                     requiredValidator(),
-                                    mobileValidator,
+                                    mobileValidator(),
                                 ]}
                             />
-                            <i class="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
                         </div>
                     </div>
                     <div>
@@ -113,13 +113,13 @@ export default function Customer_Register() {
                                 className="w-full p-3 pl-10"
                                 element="input"
                                 id="email"
+                                iconClasses="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
                                     requiredValidator(),
-                                    emailValidator,
+                                    emailValidator(),
                                 ]}
                             />
-                            <i class="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
                         </div>
                     </div>
                     <button type="submit"

@@ -7,27 +7,24 @@ const validator = (value, validations) => {
 
   for (const validator of validations) {
     if (validator.value === rules.requiredValue) {
-      value.trim().length === 0 && validationResults.push(false);
+      value.trim().length === 0 && validationResults.push(validator);
     }
     if (validator.value === rules.minValue) {
-      value.trim().length < validator.min && validationResults.push(false);
+      value.trim().length < validator.min && validationResults.push(validator);
     }
     if (validator.value === rules.maxValue) {
-      value.trim().length > validator.max && validationResults.push(false);
+      value.trim().length > validator.max && validationResults.push(validator);
     }
     if (validator.value === rules.emailValue) {
-      !regex.testEmail(value) && validationResults.push(false);
+      !regex.testEmail(value) && validationResults.push(validator);
     }
     if(validator.value === rules.mobileValue){
-      !regex.testPhoneNumber(value) && validationResults.push(false);
+      !regex.testPhoneNumber(value) && validationResults.push(validator);
     }
   }
 
-  if (validationResults.length) {
-    return false;
-  } else {
-    return true;
-  }
+  return validationResults;
+  
 };
 
 export default validator;
