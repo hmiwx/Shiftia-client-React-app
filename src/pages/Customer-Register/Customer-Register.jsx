@@ -1,8 +1,63 @@
 import React from 'react'
 import Topbar from '../../components/Topbar/Topbar'
 import Footer from '../../components/Footer/Footer'
+import useForm from '../../hooks/useForm'
+import Input from '../../components/Input/Input'
+import {
+    requiredValidator,
+    minValidator,
+    maxValidator,
+    emailValidator,
+    mobileValidator
+} from '../../validators/Rules'
+
 
 export default function Customer_Register() {
+
+    const [formState, onInputHandler] = useForm(
+        {
+            name: {
+                value: "",
+                isValid: false,
+            },
+            phone: {
+                value: "",
+                isValid: false,
+            },
+            email: {
+                value: "",
+                isValid: false,
+            }
+        },
+        false
+    );
+
+    const registerClient = async (event) => {
+        event.preventDefault();
+
+        const newUserInfos = {
+            name: formState.inputs.name.value,
+            phone: formState.inputs.phone.value,
+            email: formState.inputs.email.value,
+        };
+
+        try {
+            const res = await fetch(`https://shiftia-default-rtdb.europe-west1.firebasedatabase.app/clients.json`, {
+                method: "POST",
+                body: JSON.stringify(newUserInfos),
+            })
+            if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(errorText);
+            }
+            const result = await res.json();
+            console.Console.log(result)
+
+        } catch (err) {
+            console.error("Login error:", err);
+        }
+    }
+
     return (
         <>
             <Topbar />
@@ -14,17 +69,65 @@ export default function Customer_Register() {
                 <form className="space-y-6">
                     <div>
                         <label className="block text-blue-900 font-bold">نام</label>
-                        <input type="text" className="w-full p-3" placeholder="علیرضا" />
+                        <div className="relative">
+                            <Input
+                                type="text"
+                                placeholder="علیرضا"
+                                className="w-full p-3 pl-10"
+                                element="input"
+                                id="name"
+                                onInputHandler={onInputHandler}
+                                validations={[
+                                    requiredValidator(),
+                                    minValidator(3),
+                                    maxValidator(20),
+                                ]}
+                            />
+                            <i class="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
+                        </div>
                     </div>
                     <div>
                         <label className="block text-blue-900 font-bold">شماره تلفن</label>
-                        <input type="text" className="w-full p-3" placeholder="09121111111" />
+                        <div className="relative">
+                            <Input
+                                type="text"
+                                placeholder="09121111111"
+                                className="w-full p-3 pl-10"
+                                element="input"
+                                id="phone"
+                                onInputHandler={onInputHandler}
+                                validations={[
+                                    requiredValidator(),
+                                    mobileValidator,
+                                ]}
+                            />
+                            <i class="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
+                        </div>
                     </div>
                     <div>
                         <label className="block text-blue-900 font-bold">ایمیل</label>
-                        <input type="email" className="w-full p-3" placeholder="info@gmail.com" />
+                        <div className="relative">
+                            <Input
+                                type="email"
+                                placeholder="info@gmail.com"
+                                className="w-full p-3 pl-10"
+                                element="input"
+                                id="email"
+                                onInputHandler={onInputHandler}
+                                validations={[
+                                    requiredValidator(),
+                                    emailValidator,
+                                ]}
+                            />
+                            <i class="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"></i>
+                        </div>
                     </div>
-                    <button type="submit" className="w-full bg-orange-500 text-white p-3 rounded-full pulse">ثبت‌نام</button>
+                    <button type="submit"
+                        className="w-full bg-orange-500 text-white p-3 rounded-full pulse"
+                        onClick={registerClient}
+                        disabled={!formState.isFormValid}>
+                        ثبت‌نام
+                    </button>
                 </form>
             </main>
             <Footer />
