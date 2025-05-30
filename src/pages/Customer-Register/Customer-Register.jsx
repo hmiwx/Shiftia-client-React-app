@@ -133,7 +133,7 @@ export default function Customer_Register() {
                         </div>
                     </div>
                     <button type="submit"
-                        className="w-full bg-orange-500 text-white p-3 rounded-full pulse"
+                        className="w-full bg-orange-500 text-white p-3 rounded-full pulse disabled:opacity-50"
                         onClick={registerClient}
                         disabled={!formState.isFormValid}>
                         ثبت‌نام
