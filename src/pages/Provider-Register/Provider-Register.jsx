@@ -44,11 +44,13 @@ export default function Provider_Register() {
 
     const registerProvider = async (event) => {
         event.preventDefault();
+        const reqjob = formState.inputs.service === "other" ? formState.inputs.reqjob.value : formState.inputs.service.value
 
         const newUserInfos = {
             name: formState.inputs.name.value,
             phone: formState.inputs.phone.value,
             email: formState.inputs.email.value,
+            reqjob,
         };
 
         try {
@@ -97,7 +99,7 @@ export default function Provider_Register() {
                             <Input
                                 type="text"
                                 placeholder="علیرضا"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.name.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="name"
                                 iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -116,7 +118,7 @@ export default function Provider_Register() {
                             <Input
                                 type="text"
                                 placeholder="09121111111"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.phone.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="phone"
                                 iconClasses="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -134,7 +136,7 @@ export default function Provider_Register() {
                             <Input
                                 type="email"
                                 placeholder="info@gmail.com"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.email.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="email"
                                 iconClasses="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -150,7 +152,7 @@ export default function Provider_Register() {
                         <label htmlFor="service" class="form-label">نوع خدمت</label>
                         <div class="relative">
                             <Input
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.service.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="select"
                                 id="service"
                                 name="service"
@@ -180,7 +182,7 @@ export default function Provider_Register() {
                             <Input
                                 type="text"
                                 placeholder="عنوان مشاغل"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.reqjob.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="reqjob"
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
