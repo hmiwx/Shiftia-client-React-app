@@ -36,7 +36,7 @@ export default function Provider_Register() {
             },
             reqjob: {
                 value: "",
-                isValid: false,
+                isValid: true,
             },
         },
         false
@@ -154,11 +154,10 @@ export default function Provider_Register() {
                                 element="select"
                                 id="service"
                                 name="service"
-                                isRequired={true}
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
-
+                                    requiredValidator()
                                 ]}
                                 options={[
                                     { value: "", text: "یک خدمت را انتخاب کنید", isSelected: true, isDisabled: true },
@@ -187,7 +186,7 @@ export default function Provider_Register() {
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
-
+                                    
                                 ]}
                             />
                         </div>
