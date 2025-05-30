@@ -21,7 +21,7 @@ const inputReducer = (state, action) => {
 export default function Input(props) {
   const [mainInput, dispatch] = useReducer(inputReducer, {
     value: "",
-    invalids: [{}],
+    invalids: props.validations,
   });
 
   const { value, invalids } = mainInput;
@@ -36,7 +36,6 @@ export default function Input(props) {
       type: "CHANGE",
       value: event.target.value,
       validations: props.validations,
-      invalids: [],
     });
   };
 
@@ -45,21 +44,21 @@ export default function Input(props) {
       <input
         type={props.type}
         placeholder={props.placeholder}
-        className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`}
+        className={props.className}
         value={mainInput.value}
         onChange={onChangeHandler}
       />
     ) : props.element === "textarea" ? (
       <textarea
         placeholder={props.placeholder}
-        className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`}
+        className={`${props.className}`}
         onChange={onChangeHandler}
         value={mainInput.value}
       />
     ) : (
         <select id={props.id} 
         name={props.name} 
-        className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`} 
+        className={`${props.className}`} 
         onChange={onChangeHandler}
         value={mainInput.value}
         >
