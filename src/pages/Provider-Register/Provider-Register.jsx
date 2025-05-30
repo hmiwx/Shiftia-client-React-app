@@ -64,19 +64,19 @@ export default function Provider_Register() {
                 title: "اطلاعات شما با موفقیت ثبت شد.\nاز همراهی شما سپاسگذاریم",
                 icon: "success",
                 buttons: "بازگشت",
-              }).then(()=> navigate('/'))
+            }).then(() => navigate('/'))
 
         } catch (err) {
             swal({
                 title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
                 icon: "error",
                 buttons: "ارسال مجدد"
-            }).then(()=> registerClient())
+            }).then(() => registerClient())
         }
     }
-  return (
-    <>
-    <Topbar />
+    return (
+        <>
+            <Topbar />
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
                     <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>
@@ -140,17 +140,46 @@ export default function Provider_Register() {
                     </div>
                     <div class="mb-6">
                         <label class="form-label">نوع خدمت</label>
-                        <div class="input-group">
-                            <select id="service" name="service" class="form-input" required>
-                                <option value="" disabled selected>یک خدمت را انتخاب کنید</option>
-                                <option value="barber">آرایشگر</option>
-                                <option value="barber">نظافتچی</option>
-                                <option value="beautician">متخصص زیبایی</option>
-                                <option value="massage">ماساژور</option>
-                                <option value="nail">متخصص ناخن</option>
-                                <option value="other">سایر</option>
-                            </select>
-                            <i class="fas fa-briefcase input-icon"></i>
+                        <div class="relative">
+                            <Input
+                                className="w-full p-3 pl-10"
+                                element="select"
+                                id="service"
+                                name="service"
+                                isRequired={true}
+                                iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
+                                onInputHandler={onInputHandler}
+                                validations={[
+                                    
+                                ]}
+                                options={[
+                                    { value: "", text: "یک خدمت را انتخاب کنید", isSelected: true, isDisabled: true },
+                                    { value: "barber", text: "آرایشگر", isSelected: false, isDisabled: false },
+                                    { value: "cleaner", text: "نظافتچی", isSelected: false, isDisabled: false },
+                                    { value: "electrician", text: "برقکار", isSelected: false, isDisabled: false },
+                                    { value: "mechanic", text: "تعمیرکار", isSelected: false, isDisabled: false },
+                                    { value: "beautician", text: "متخصص زیبایی", isSelected: false, isDisabled: false },
+                                    { value: "massage", text: "ماساژور", isSelected: false, isDisabled: false },
+                                    { value: "nail", text: "متخصص ناخن", isSelected: false, isDisabled: false },
+                                    { value: "other", text: "سایر", isSelected: false, isDisabled: false },
+                                ]}
+
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="block text-blue-900 font-bold">درخواست اضافه کردن مشاغل شما:</label>
+                        <div className="relative">
+                            <Input
+                                type="text"
+                                placeholder="عنوان مشاغل"
+                                className="w-full p-3 pl-10"
+                                element="input"
+                                id="reqjob"
+                                iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
+                                onInputHandler={onInputHandler}
+                                hidden={!formState.inputs.service === "other"}
+                            />
                         </div>
                     </div>
                     <button type="submit"
@@ -162,6 +191,6 @@ export default function Provider_Register() {
                 </form>
             </main>
             <Footer />
-    </>
-  )
+        </>
+    )
 }
