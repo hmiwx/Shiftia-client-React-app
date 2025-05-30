@@ -14,7 +14,7 @@ export default function Topbar() {
             </div>
             <div className="flex gap-6 items-center">
                 <Link to="#regbox" className="nav-link hover:text-orange-300 transition-colors">ثبت‌نام</Link>
-                <Link to="/" className="nav-link hover:text-orange-300 transition-colors">پشتیبانی</Link>
+                <Link to="/support" className="nav-link hover:text-orange-300 transition-colors">پشتیبانی</Link>
             </div>
         </div>
     </nav>
