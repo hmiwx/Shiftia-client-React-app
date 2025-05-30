@@ -34,7 +34,7 @@ export default function Provider_Register() {
                 value: "",
                 isValid: false,
             },
-            job_suggestion: {
+            reqjob: {
                 value: "",
                 isValid: false,
             },
@@ -70,8 +70,16 @@ export default function Provider_Register() {
             swal({
                 title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
                 icon: "error",
-                buttons: "ارسال مجدد"
-            }).then(() => registerClient())
+                buttons: ["ارسال مجدد", "بازگشت"],
+            }).then((op) => {
+                switch (op) {
+                    case "ارسال مجدد":
+                        registerProvider();
+                        break;
+                    default:
+                        navigate('/');
+                }
+            })
         }
     }
     return (
@@ -139,7 +147,7 @@ export default function Provider_Register() {
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label class="form-label">نوع خدمت</label>
+                        <label htmlFor="service" class="form-label">نوع خدمت</label>
                         <div class="relative">
                             <Input
                                 className="w-full p-3 pl-10"
@@ -150,7 +158,7 @@ export default function Provider_Register() {
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
-                                    
+
                                 ]}
                                 options={[
                                     { value: "", text: "یک خدمت را انتخاب کنید", isSelected: true, isDisabled: true },
@@ -167,7 +175,7 @@ export default function Provider_Register() {
                             />
                         </div>
                     </div>
-                    <div>
+                    <div hidden={formState.inputs.service.value !== "other"}>
                         <label className="block text-blue-900 font-bold">درخواست اضافه کردن مشاغل شما:</label>
                         <div className="relative">
                             <Input
@@ -178,12 +186,14 @@ export default function Provider_Register() {
                                 id="reqjob"
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
-                                hidden={!formState.inputs.service === "other"}
+                                validations={[
+
+                                ]}
                             />
                         </div>
                     </div>
                     <button type="submit"
-                        className="w-full bg-orange-500 text-white p-3 rounded-full pulse"
+                        className="w-full bg-orange-500 text-white p-3 rounded-full pulse disabled:opacity-50"
                         onClick={registerProvider}
                         disabled={!formState.isFormValid}>
                         ثبت‌نام
