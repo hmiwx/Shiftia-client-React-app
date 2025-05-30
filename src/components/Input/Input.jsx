@@ -60,7 +60,7 @@ export default function Input(props) {
         <select id={props.id} name={props.name} className={props.className} required={props.isRequired} multiple={props.isMulti}>
           {
             !!props.options.length &&
-            props.options.map((index, val) => (
+            props.options.map((val, index) => (
               <option value={val.value} disabled={val.isDisabled} selected={val.isSelected} key={uuid()} > {val.text} </option>
             ))
           }
