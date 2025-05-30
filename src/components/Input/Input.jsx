@@ -21,7 +21,7 @@ const inputReducer = (state, action) => {
 export default function Input(props) {
   const [mainInput, dispatch] = useReducer(inputReducer, {
     value: "",
-    invalids: [],
+    invalids: [{}],
   });
 
   const { value, invalids } = mainInput;
@@ -48,7 +48,6 @@ export default function Input(props) {
         className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`}
         value={mainInput.value}
         onChange={onChangeHandler}
-        hidden={props.isHiddden}
       />
     ) : props.element === "textarea" ? (
       <textarea
