@@ -44,11 +44,13 @@ export default function Provider_Register() {
 
     const registerProvider = async (event) => {
         event.preventDefault();
+        const reqjob = formState.inputs.service === "other" ? formState.inputs.reqjob.value : formState.inputs.service.value
 
         const newUserInfos = {
             name: formState.inputs.name.value,
             phone: formState.inputs.phone.value,
             email: formState.inputs.email.value,
+            reqjob,
         };
 
         try {
