@@ -70,7 +70,18 @@ export default function Customer_Register() {
 
     return (
         <>
-            <Topbar />
+            <Topbar>
+            {[
+        {
+          link: "/",
+          text: "خانه"
+        },
+        {
+          link: "/support",
+          text: "پشتیبانی"
+        }
+      ]}
+            </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
                     <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>

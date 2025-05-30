@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/images/logo.svg'
 
-export default function Topbar() {
+export default function Topbar(props) {
 
   return (
     <nav className="text-white p-4 sticky top-0 z-50">
@@ -13,8 +13,12 @@ export default function Topbar() {
                 <h1 className="text-2xl font-bold">شیفتیا</h1>
             </div>
             <div className="flex gap-6 items-center">
-                <Link to="#regbox" className="nav-link hover:text-orange-300 transition-colors">ثبت‌نام</Link>
-                <Link to="/support" className="nav-link hover:text-orange-300 transition-colors">پشتیبانی</Link>
+                {
+                    props.children.map(value=>(
+                        <Link to={value.link} className="nav-link hover:text-orange-300 transition-colors">{value.text}</Link>
+                        )
+                    )
+                }
             </div>
         </div>
     </nav>

@@ -9,7 +9,18 @@ import Footer from '../../components/Footer/Footer'
 export default function Landing() {
   return (
     <>
-    <Topbar />
+    <Topbar>
+      {[
+        {
+          link: "#regbox",
+          text: "ثبت‌نام"
+        },
+        {
+          link: "/support",
+          text: "پشتیبانی"
+        }
+      ]}
+    </Topbar>
     <main class="max-w-6xl mx-auto mt-8 p-4">
       <Header />
       <Video />

@@ -39,7 +39,7 @@ export default function Support() {
                 value: "",
                 isValid: false,
             },
-            
+
         },
         false
     );
@@ -68,20 +68,31 @@ export default function Support() {
                 title: "اطلاعات شما با موفقیت ثبت شد.\nاز همراهی شما سپاسگذاریم",
                 icon: "success",
                 buttons: "بازگشت",
-              }).then(()=> navigate('/'))
+            }).then(() => navigate('/'))
 
         } catch (err) {
             swal({
                 title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
                 icon: "error",
                 buttons: "ارسال مجدد"
-            }).then(()=> sendTicket())
+            }).then(() => sendTicket())
         }
     }
 
     return (
         <>
-            <Topbar />
+            <Topbar>
+                {[
+                    {
+                        link: "/",
+                        text: "خانه"
+                    },
+                    {
+                        link: "/#regbox",
+                        text: "ثبت‌نام"
+                    }
+                ]}
+            </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
                     <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>
