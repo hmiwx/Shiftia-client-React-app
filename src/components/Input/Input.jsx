@@ -48,17 +48,26 @@ export default function Input(props) {
         value={mainInput.value}
         onChange={onChangeHandler}
       />
-    ) : (
+    ) : props.element === "textarea" ? (
       <textarea
         placeholder={props.placeholder}
         className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`}
         onChange={onChangeHandler}
         value={mainInput.value}
       />
+    ) : (
+        <select id={props.id} name={props.name} className={props.className} required={props.isRequired} multiple={props.isMulti}>
+          {
+            !!props.options.length &&
+            props.options.map((index, val) => (
+              <option value={val.value} disabled={val.isDisabled} selected={val.isSelected} key={index} > {val.text} </option>
+            ))
+          }
+        </select>
     );
 
   return (
-    <div>
+    <>
       {element}
       {props.iconClasses &&
         <i className={props.iconClasses}></i>}
@@ -70,5 +79,5 @@ export default function Input(props) {
         )
 
         )}
-    </div>)
+    </>)
 }
