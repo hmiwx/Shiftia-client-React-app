@@ -32,7 +32,7 @@ export default function Footer() {
                     <h4 className="text-lg font-bold mb-4">دسترسی سریع</h4>
                     <ul className="space-y-3">
                         <li><Link to="/" className="text-gray-400 hover:text-white">صفحه اصلی</Link></li>
-                        <li><Link to="#mvp-video" className="text-gray-400 hover:text-white">ویدیو معرفی</Link></li>
+                        <li><Link to="/#mvp-video" className="text-gray-400 hover:text-white">ویدیو معرفی</Link></li>
                         <li><Link to="/support" className="text-gray-400 hover:text-white">تماس با ما</Link></li>
                     </ul>
                 </div>
