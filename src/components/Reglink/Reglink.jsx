@@ -10,7 +10,7 @@ export default function Reglink() {
                 <Link to="/customer-register" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all shadow-lg">
                     ثبت‌نام مشتری
                 </Link>
-                <Link to="/" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-all shadow-lg">
+                <Link to="/provider-register" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-all shadow-lg">
                     ثبت‌نام خدمات دهنده
                 </Link>
             </div>
