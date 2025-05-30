@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import validator from "../../validators/Validator";
 import { errorMessage } from "../../validators/Rules";
+import {v4 as uuid} from 'uuid';
 
 const inputReducer = (state, action) => {
   switch (action.type) {
@@ -60,7 +61,7 @@ export default function Input(props) {
           {
             !!props.options.length &&
             props.options.map((index, val) => (
-              <option value={val.value} disabled={val.isDisabled} selected={val.isSelected} key={index} > {val.text} </option>
+              <option value={val.value} disabled={val.isDisabled} selected={val.isSelected} key={uuid()} > {val.text} </option>
             ))
           }
         </select>
@@ -73,7 +74,7 @@ export default function Input(props) {
         <i className={props.iconClasses}></i>}
       {!!mainInput.invalids.length &&
         mainInput.invalids.map((error, index) => (
-          <p className="text-red-500 text-sm mt-1" key={index}>
+          <p className="text-red-500 text-sm mt-1" key={uuid()}>
             {errorMessage(error)}
           </p>
         )
