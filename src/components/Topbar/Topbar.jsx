@@ -13,7 +13,7 @@ export default function Topbar() {
                 <h1 className="text-2xl font-bold">شیفتیا</h1>
             </div>
             <div className="flex gap-6 items-center">
-                <Link to="/" className="nav-link hover:text-orange-300 transition-colors">ثبت‌نام</Link>
+                <Link to="#regbox" className="nav-link hover:text-orange-300 transition-colors">ثبت‌نام</Link>
                 <Link to="/" className="nav-link hover:text-orange-300 transition-colors">پشتیبانی</Link>
             </div>
         </div>

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export default function Reglink() {
   return (
-    <section className="mt-16 text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl fade-in">
+    <section id="regbox" className="mt-16 text-center py-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl fade-in">
             <h3 className="text-3xl font-bold text-white mb-4">همین امروز به شیفتیا بپیوندید!</h3>
             <p className="text-white text-lg mb-8 max-w-2xl mx-auto">در صورت مفید دانستن راه اندازی این پلتفرم با وارد کردن اطلاعات خود، ما را همراهی کنید.</p>
             <div className="flex gap-4 justify-center">

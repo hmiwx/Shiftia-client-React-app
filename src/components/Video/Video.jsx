@@ -14,12 +14,12 @@ export default function Video() {
                             allowfullscreen>
                     </iframe>
                     {/* video placeholder */}
-                    {/* <div class="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-800 rounded-xl">
+                    <div class="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-800 rounded-xl">
                         <div class="text-center">
                             <i class="fas fa-film text-5xl text-blue-500 mb-4"></i>
                             <p class="text-white text-lg">ویدیو معرفی به زودی...</p>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <div className="mt-6 text-center">

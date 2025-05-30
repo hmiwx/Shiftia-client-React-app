@@ -19,7 +19,7 @@ export default function Header() {
                 <Link to="#mvp-video" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full pulse transition-all shadow-lg">
                     مشاهده ویدیو معرفی
                 </Link>
-                <Link to="/" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all shadow-lg">
+                <Link to="#regbox" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all shadow-lg">
                     ثبت‌نام رایگان
                 </Link>
             </div>
