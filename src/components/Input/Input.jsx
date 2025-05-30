@@ -60,7 +60,6 @@ export default function Input(props) {
         <select id={props.id} 
         name={props.name} 
         className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`} 
-        required={props.isRequired} 
         onChange={onChangeHandler}
         value={mainInput.value}
         >
