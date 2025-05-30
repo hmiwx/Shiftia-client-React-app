@@ -48,6 +48,7 @@ export default function Input(props) {
         className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`}
         value={mainInput.value}
         onChange={onChangeHandler}
+        hidden={props.isHiddden}
       />
     ) : props.element === "textarea" ? (
       <textarea
@@ -57,11 +58,17 @@ export default function Input(props) {
         value={mainInput.value}
       />
     ) : (
-        <select id={props.id} name={props.name} className={props.className} required={props.isRequired} multiple={props.isMulti}>
+        <select id={props.id} 
+        name={props.name} 
+        className={`${props.className} ${!mainInput.invalids.length ? "border-green-500" : "border-red-500"}`} 
+        required={props.isRequired} 
+        onChange={onChangeHandler}
+        value={mainInput.value}
+        >
           {
             !!props.options.length &&
             props.options.map((val, index) => (
-              <option value={val.value} disabled={val.isDisabled} selected={val.isSelected} key={uuid()} > {val.text} </option>
+              <option value={val.value} disabled={val.isDisabled} key={uuid()} > {val.text} </option>
             ))
           }
         </select>
