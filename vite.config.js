@@ -5,7 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/Shiftia-client-React-app/',
-  build: {
-    target: 'es2015' // Or 'modules'
-  }
 })
