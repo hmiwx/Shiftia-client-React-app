@@ -42,7 +42,7 @@ export default function Benefits() {
                 </div>
                 
                 <div className="md:w-1/2">
-                    <img src="/images/cleaning.jpg" alt="نظافت" className="rounded-xl shadow-lg" />
+                    <img src={import.meta.env.BASE_URL + "/images/cleaning.jpg"} alt="نظافت" className="rounded-xl shadow-lg" />
                 </div>
             </div>
         </section>
