@@ -6,4 +6,7 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   plugins: [react(), svgr()],
   base: '/Shiftia-client-React-app/',
+  build: {
+    target: 'es2015' // Or 'modules'
+  }
 })
