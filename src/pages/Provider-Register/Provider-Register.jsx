@@ -171,8 +171,8 @@ export default function Provider_Register() {
                             />
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label htmlFor="service" class="form-label">نوع خدمت</label>
+                    <div className="mb-6">
+                        <label htmlFor="service" className="form-label">نوع خدمت</label>
                         <div className="relative">
                             <Input
                                 className={`w-full p-3 pl-10 ${formState.inputs.service.isValid ? "border-green-500" : "border-red-500"}`}
