@@ -120,7 +120,6 @@ export default function Customer_Register() {
                                 onInputHandler={onInputHandler}
                                 validations={[
                                     requiredValidator(),
-                                    minValidator(3),
                                     maxValidator(20),
                                 ]}
                             />
