@@ -113,7 +113,7 @@ export default function Customer_Register() {
                             <Input
                                 type="text"
                                 placeholder="علیرضا"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.name.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="name"
                                 iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -132,7 +132,7 @@ export default function Customer_Register() {
                             <Input
                                 type="text"
                                 placeholder="09121111111"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.phone.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="phone"
                                 iconClasses="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -150,7 +150,7 @@ export default function Customer_Register() {
                             <Input
                                 type="email"
                                 placeholder="info@gmail.com"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.email.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="email"
                                 iconClasses="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
