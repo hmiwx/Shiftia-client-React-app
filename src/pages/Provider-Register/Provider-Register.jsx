@@ -220,7 +220,7 @@ export default function Provider_Register() {
                         className="w-full bg-orange-500 text-white p-3 rounded-full pulse disabled:opacity-50"
                         onClick={registerProvider}
                         disabled={!formState.isFormValid}>
-                        ثبت‌نام
+                        ارسال
                     </button>
                 </form>
             </main>
