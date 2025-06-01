@@ -103,7 +103,7 @@ export default function Customer_Register() {
             </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
-                    <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>
+                    <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتیا بپیوندید!</h1>
                     <p className="text-gray-700">در هنگام راه اندازی جزو اولین مطلعان باشید.</p>
                 </div>
                 <form className="space-y-6">

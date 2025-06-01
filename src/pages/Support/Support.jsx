@@ -95,8 +95,8 @@ export default function Support() {
             </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
-                    <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>
-                    <p className="text-gray-700">در هنگام راه اندازی جزو اولین مطلعان باشید.</p>
+                    <h1 className="text-3xl font-bold text-blue-900">ثبت تیکت پشتیبانی</h1>
+                    <p className="text-gray-700">پیشنهادات خود را با ما در میان بگذارید!</p>
                 </div>
                 <form className="space-y-6">
                     <div>
