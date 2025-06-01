@@ -21,7 +21,7 @@ export default function Landing() {
         }
       ]}
     </Topbar>
-    <main class="max-w-6xl mx-auto mt-8 p-4">
+    <main className="max-w-6xl mx-auto mt-8 p-4">
       <Header />
       <Video />
       <Benefits />
