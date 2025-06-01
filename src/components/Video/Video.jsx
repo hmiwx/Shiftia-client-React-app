@@ -7,7 +7,7 @@ export default function Video() {
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl">
                 <div className="w-full h-0 pb-[56.25%] relative bg-gray-100 rounded-xl">
                     <iframe className="absolute inset-0 w-full h-full rounded-xl" 
-                            src="https://drive.google.com/file/d/1-x0hVPqCfhq6QIiW84qZHoTG2Tg2mQtT/view?usp=drivesdk" 
+                            src="/videos/Shiftia_720p_2br.mp4" 
                             title="معرفی شیفتیا" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
