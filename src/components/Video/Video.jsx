@@ -10,7 +10,11 @@ export default function Video() {
                             src={import.meta.env.BASE_URL + "/videos/Shiftia_720p_2br.mp4"}
                             title="معرفی شیفتیا" 
                             controls
-                            preload="metadata">
+                            controlsList="nodownload"
+                            preload="metadata"
+                            playsInline
+                            disablePictureInPicture
+                            allowFullScreen>
                     </video>
                     {/* video placeholder
                     <div class="absolute inset-0 w-full h-full flex items-center justify-center bg-gray-800 rounded-xl">
