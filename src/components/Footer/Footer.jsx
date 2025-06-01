@@ -50,7 +50,7 @@ export default function Footer() {
                         </li>
                         <li className="flex items-start gap-2">
                             <i className="fas fa-envelope text-gray-400 mt-1"></i>
-                            <span classname="text-gray-400">info@shiftiha.ir</span>
+                            <span className="text-gray-400">info@shiftiha.ir</span>
                         </li>
                     </ul>
                 </div>

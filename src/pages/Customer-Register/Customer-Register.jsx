@@ -63,8 +63,27 @@ export default function Customer_Register() {
             swal({
                 title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
                 icon: "error",
-                buttons: "ارسال مجدد"
-            }).then(()=> registerClient())
+                buttons:{
+                    retry:{
+                        text: "ارسال مجدد",
+                        value: "retry"
+                    },
+                    return: {
+                        text: "بازگشت",
+                        value: "return"
+                    }
+                }
+            }).then((op)=> {
+                switch(op){
+                    case "retry":{
+                        registerClient(event);
+                        break;
+                    }
+                    default:{
+                        navigate('/');
+                    }
+                }
+            })
         }
     }
 
@@ -94,7 +113,7 @@ export default function Customer_Register() {
                             <Input
                                 type="text"
                                 placeholder="علیرضا"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.name.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="name"
                                 iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -104,6 +123,7 @@ export default function Customer_Register() {
                                     minValidator(3),
                                     maxValidator(20),
                                 ]}
+                                initisVal={formState.inputs.name.isValid}
                             />
                         </div>
                     </div>
@@ -113,7 +133,7 @@ export default function Customer_Register() {
                             <Input
                                 type="text"
                                 placeholder="09121111111"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.phone.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="phone"
                                 iconClasses="fas fa-phone input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -122,6 +142,7 @@ export default function Customer_Register() {
                                     requiredValidator(),
                                     mobileValidator(),
                                 ]}
+                                initisVal={formState.inputs.phone.isValid}
                             />
                         </div>
                     </div>
@@ -131,7 +152,7 @@ export default function Customer_Register() {
                             <Input
                                 type="email"
                                 placeholder="info@gmail.com"
-                                className="w-full p-3 pl-10"
+                                className={`w-full p-3 pl-10 ${formState.inputs.email.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="input"
                                 id="email"
                                 iconClasses="fas fa-envelope absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
@@ -140,6 +161,7 @@ export default function Customer_Register() {
                                     requiredValidator(),
                                     emailValidator(),
                                 ]}
+                                initisVal={formState.inputs.email.isValid}
                             />
                         </div>
                     </div>
