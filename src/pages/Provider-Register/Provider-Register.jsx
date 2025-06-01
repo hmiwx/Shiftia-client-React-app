@@ -44,7 +44,7 @@ export default function Provider_Register() {
 
     const registerProvider = async (event) => {
         event.preventDefault();
-        const reqjob = formState.inputs.service === "other" ? formState.inputs.reqjob.value : formState.inputs.service.value
+        const reqjob = formState.inputs.service.value === "other" ? formState.inputs.reqjob.value : formState.inputs.service.value
 
         const newUserInfos = {
             name: formState.inputs.name.value,
@@ -96,20 +96,20 @@ export default function Provider_Register() {
     return (
         <>
             <Topbar>
-            {[
-        {
-          link: "/",
-          text: "خانه"
-        },
-        {
-          link: "/support",
-          text: "پشتیبانی"
-        }
-      ]}
+                {[
+                    {
+                        link: "/",
+                        text: "خانه"
+                    },
+                    {
+                        link: "/support",
+                        text: "پشتیبانی"
+                    }
+                ]}
             </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
-                    <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتی‌ها بپیوندید!</h1>
+                    <h1 className="text-3xl font-bold text-blue-900">به جمع شیفتیا بپیوندید!</h1>
                     <p className="text-gray-700">در هنگام راه اندازی جزو اولین مطلعان باشید.</p>
                 </div>
                 <form className="space-y-6">
@@ -125,7 +125,6 @@ export default function Provider_Register() {
                                 iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
-                                    requiredValidator(),
                                     minValidator(3),
                                     maxValidator(20),
                                 ]}
@@ -220,7 +219,7 @@ export default function Provider_Register() {
                         className="w-full bg-orange-500 text-white p-3 rounded-full pulse disabled:opacity-50"
                         onClick={registerProvider}
                         disabled={!formState.isFormValid}>
-                        ثبت‌نام
+                        ارسال
                     </button>
                 </form>
             </main>
