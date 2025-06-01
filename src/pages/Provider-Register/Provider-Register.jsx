@@ -96,16 +96,16 @@ export default function Provider_Register() {
     return (
         <>
             <Topbar>
-            {[
-        {
-          link: "/",
-          text: "خانه"
-        },
-        {
-          link: "/support",
-          text: "پشتیبانی"
-        }
-      ]}
+                {[
+                    {
+                        link: "/",
+                        text: "خانه"
+                    },
+                    {
+                        link: "/support",
+                        text: "پشتیبانی"
+                    }
+                ]}
             </Topbar>
             <main className="max-w-md mx-auto mt-12 p-6 card fade-in">
                 <div className="text-center mb-6">
@@ -125,7 +125,6 @@ export default function Provider_Register() {
                                 iconClasses="fas fa-user input-icon absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
                                 validations={[
-                                    requiredValidator(),
                                     minValidator(3),
                                     maxValidator(20),
                                 ]}
