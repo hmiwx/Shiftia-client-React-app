@@ -7,7 +7,7 @@ export default function Video() {
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl">
                 <div className="w-full h-0 pb-[56.25%] relative bg-gray-100 rounded-xl">
                 <video className="absolute inset-0 w-full h-full rounded-xl" 
-                            src="/videos/Shiftia_720p_2br.mp4"
+                            src={import.meta.env.BASE_URL + "/videos/Shiftia_720p_2br.mp4"}
                             title="معرفی شیفتیا" 
                             controls
                             controlsList="nodownload"
