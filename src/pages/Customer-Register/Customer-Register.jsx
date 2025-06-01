@@ -123,6 +123,7 @@ export default function Customer_Register() {
                                     minValidator(3),
                                     maxValidator(20),
                                 ]}
+                                initisVal={formState.inputs.name.isValid}
                             />
                         </div>
                     </div>
@@ -141,6 +142,7 @@ export default function Customer_Register() {
                                     requiredValidator(),
                                     mobileValidator(),
                                 ]}
+                                initisVal={formState.inputs.phone.isValid}
                             />
                         </div>
                     </div>
@@ -159,6 +161,7 @@ export default function Customer_Register() {
                                     requiredValidator(),
                                     emailValidator(),
                                 ]}
+                                initisVal={formState.inputs.email.isValid}
                             />
                         </div>
                     </div>

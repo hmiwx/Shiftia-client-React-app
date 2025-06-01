@@ -129,6 +129,7 @@ export default function Provider_Register() {
                                     minValidator(3),
                                     maxValidator(20),
                                 ]}
+                                initisValid={formState.inputs.name.isValid}
                             />
                         </div>
                     </div>
@@ -147,6 +148,7 @@ export default function Provider_Register() {
                                     requiredValidator(),
                                     mobileValidator(),
                                 ]}
+                                initisValid={formState.inputs.phone.isValid}
                             />
                         </div>
                     </div>
@@ -165,12 +167,13 @@ export default function Provider_Register() {
                                     requiredValidator(),
                                     emailValidator(),
                                 ]}
+                                initisValid={formState.inputs.email.isValid}
                             />
                         </div>
                     </div>
                     <div class="mb-6">
                         <label htmlFor="service" class="form-label">نوع خدمت</label>
-                        <div class="relative">
+                        <div className="relative">
                             <Input
                                 className={`w-full p-3 pl-10 ${formState.inputs.service.isValid ? "border-green-500" : "border-red-500"}`}
                                 element="select"
@@ -181,6 +184,7 @@ export default function Provider_Register() {
                                 validations={[
                                     requiredValidator()
                                 ]}
+                                initisValid={formState.inputs.service.isValid}
                                 options={[
                                     { value: "", text: "یک خدمت را انتخاب کنید", isSelected: true, isDisabled: true },
                                     { value: "barber", text: "آرایشگر", isSelected: false, isDisabled: false },
@@ -207,9 +211,8 @@ export default function Provider_Register() {
                                 id="reqjob"
                                 iconClasses="fas fa-briefcase absolute inset-y-4 left-2 flex items-center pl-3 text-gray-400 pointer-events-none"
                                 onInputHandler={onInputHandler}
-                                validations={[
-                                    
-                                ]}
+                                validations={formState.inputs.service.value === "other" ? [requiredValidator()] : []}
+                                initisValid={formState.inputs.reqjob.isValid}
                             />
                         </div>
                     </div>

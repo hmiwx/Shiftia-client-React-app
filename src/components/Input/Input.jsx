@@ -19,9 +19,10 @@ const inputReducer = (state, action) => {
 };
 
 export default function Input(props) {
+  const initValid = ()=> props.initisValid ? [] : [{}]  
   const [mainInput, dispatch] = useReducer(inputReducer, {
     value: "",
-    invalids: props.validations,
+    invalids: initValid(),
   });
 
   const { value, invalids } = mainInput;
@@ -29,7 +30,7 @@ export default function Input(props) {
 
   useEffect(() => {
     onInputHandler(id, value, invalids);
-  }, [value]);
+  }, [invalids]);
 
   const onChangeHandler = (event) => {
     dispatch({
