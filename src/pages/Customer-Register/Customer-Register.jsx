@@ -63,8 +63,27 @@ export default function Customer_Register() {
             swal({
                 title: "مشکلی در ثبت اطلاعات به وجود آمده.\nلطفا دوباره تلاش کنید",
                 icon: "error",
-                buttons: "ارسال مجدد"
-            }).then(()=> registerClient())
+                buttons:{
+                    retry:{
+                        text: "ارسال مجدد",
+                        value: "retry"
+                    },
+                    return: {
+                        text: "بازگشت",
+                        value: "return"
+                    }
+                }
+            }).then((op)=> {
+                switch(op){
+                    case "retry":{
+                        registerClient(event);
+                        break;
+                    }
+                    default:{
+                        navigate('/');
+                    }
+                }
+            })
         }
     }
 
